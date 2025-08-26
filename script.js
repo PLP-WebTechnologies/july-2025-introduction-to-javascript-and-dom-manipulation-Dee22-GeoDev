@@ -29,20 +29,22 @@ while (count > 0) {
   count--;
 }
 
-let newDiv = document.createElement("div");
-newDiv.innerText = "I was created by JavaScript!";
-document.body.appendChild(newDiv);
-
 document.getElementById("changeTextBtn").addEventListener("click", function() {
   document.getElementById("title").innerText = "Hey things are getting tougher!";
+  document.getElementById("title").style.color = "green";
 });
 
-document.getElementById("toggleColorBtn").addEventListener("click", function() {
-  document.getElementById("title").classList.toggle("blue");
-});
+function changeText(){
+let newDiv = document.createElement("div");
+newDiv.innerText = "I was created by JavaScript!";
+newDiv.style.color = "red";
+document.body.appendChild(newDiv);
+document.getElementById("title").style.color = "red";
+}
 
 document.getElementById("createItemBtn").addEventListener("click", function() {
   let li = document.createElement("li");
   li.innerText = "New Item " + (document.querySelectorAll("#dynamicList li").length + 1);
   document.getElementById("dynamicList").appendChild(li);
+  document.getElementById("title").style.color = "purple";
 });
